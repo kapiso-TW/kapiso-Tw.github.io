@@ -6,7 +6,6 @@
   <title>kapiso</title>
 
   <style>
-    /* 设置全屏显示 */
     body {
       margin: 0;
       overflow: hidden;
@@ -16,7 +15,6 @@
       justify-content: center;
     }
 
-    /* 画布样式 */
     canvas {
       position: absolute;
       width: 100%;
@@ -27,8 +25,8 @@
     }
   </style>
 </head>
+
 <body>
-  <!-- 画布元素 -->
   <canvas id="pinkboard"></canvas>
 
   <script>
@@ -68,7 +66,6 @@
       }
     })();
 
-    // 2D 坐标点类
     var Point = (function () {
       function Point(x, y) {
         this.x = x || 0;
@@ -94,7 +91,6 @@
       return Point;
     })();
 
-    // 粒子类
     var Particle = (function () {
       function Particle() {
         this.position = new Point();
@@ -129,7 +125,6 @@
       return Particle;
     })();
 
-    // 粒子池类
     var ParticlePool = (function () {
       var particles,
         firstActive = 0,
@@ -169,7 +164,6 @@
         }
       };
       ParticlePool.prototype.draw = function (context, image) {
-        // 绘制活跃的粒子
         if (firstActive < firstFree) {
           for (i = firstActive; i < firstFree; i++)
             particles[i].draw(context, image);
@@ -257,8 +251,13 @@
       }, 50);
     })(document.getElementById('pinkboard'));
   </script>
-  <h2 style="margin: 0;height: 100vh; display: flex;align-items: center; justify-content: center;color: rgb(190, 52, 52);">JUST 🩷 U</h2>
-  <p onclick="back()" style="position: absolute; top: 1px; left: 5px ;font-size: 14px; color:blue">回到上一頁 !!</p>
+  <h2
+    style="margin: 0;height: 100vh; display: flex;align-items: center; justify-content: center;color: rgb(190, 52, 52);">
+    JUST
+    🩷 U</h2>
+  <p onclick="back()" style="position: absolute; top: 1px; left: 5px; font-size: 14px; color:blue">回到上一頁
+    !!</p>
   <script src="heart.js"></script>
 </body>
+
 </html>
