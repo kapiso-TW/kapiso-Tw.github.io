@@ -1,7 +1,7 @@
 const oneTimeHash = "2f1987bf98c09d2f5d2a23a6ae29fa53b9aec8f07ed1330bd439122f5a1a2c2c";
 const reusableHash = "a7a39b72f29718e653e73503210fbb597057b7a1c77d1fe321a1afcff041d4e1";
 let isOneTimeUsed = false;
-const abc = 1
+var abc = 1
 async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
