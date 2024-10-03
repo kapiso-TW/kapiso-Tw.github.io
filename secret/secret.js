@@ -23,7 +23,7 @@ async function unlock() {
         isOneTimeUsed = true;
         document.getElementById("lock-screen").classList.remove("active");
         document.getElementById("content").classList.add("active");
-        abc++
+        abc = abc+1
         console.log(abc);
     } else {
         errorMessage.style.display = "block";
