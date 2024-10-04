@@ -28,14 +28,14 @@ function createMeteor() {
     const meteor = document.createElement('div');
     meteor.classList.add('meteor');
 
-    meteor.style.left = `${Math.random() * window.innerWidth}px`;
-    meteor.style.top = `${Math.random() * window.innerHeight / 2}px`; // 流星从屏幕的上半部分开始
-    meteor.style.animationDelay = `${Math.random() * 5}s`; // 随机延迟时间
-    
+    meteor.style.left = '${ Math.random() * window.innerWidth } px';
+    meteor.style.top = '${ Math.random() * window.innerHeight / 2 } px';
+    meteor.style.animationDelay = '${ Math.random() * 5 } s';
+
     sky.appendChild(meteor);
 
     setTimeout(() => {
         meteor.remove();
     }, 3000);
 }
-setInterval(createMeteor, 500);
+setInterval(createMeteor, 500); 
