@@ -1,5 +1,7 @@
 const publicHash = "2f1987bf98c09d2f5d2a23a6ae29fa53b9aec8f07ed1330bd439122f5a1a2c2c";
 const reusableHash = "a7a39b72f29718e653e73503210fbb597057b7a1c77d1fe321a1afcff041d4e1";
+const sky = document.querySelector('.sky');
+
 async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
@@ -21,3 +23,19 @@ async function unlock() {
         errorMessage.style.display = "block";
     }
 }
+
+function createMeteor() {
+    const meteor = document.createElement('div');
+    meteor.classList.add('meteor');
+
+    meteor.style.left = `${Math.random() * window.innerWidth}px`;
+    meteor.style.top = `${Math.random() * window.innerHeight / 2}px`; // 流星从屏幕的上半部分开始
+    meteor.style.animationDelay = `${Math.random() * 5}s`; // 随机延迟时间
+    
+    sky.appendChild(meteor);
+
+    setTimeout(() => {
+        meteor.remove();
+    }, 3000);
+}
+setInterval(createMeteor, 500);
