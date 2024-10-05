@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字逐漸消失範例</title>
+    <style>
+        #text {
+            font-size: 24px;
+            opacity: 1;
+            transition: opacity 2s ease-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="text">這是一段將會逐漸消失的文字。</div>
+    <button onclick="fadeOutText()">點擊這裡讓文字消失</button>
+
+    <script>
+        function fadeOutText() {
+            var textElement = document.getElementById("text");
+            textElement.classList.add("fade-out");
+        }
+    </script>
+</body>
+</html>
